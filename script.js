@@ -3,6 +3,7 @@ const resetBtn = document.querySelector('.reset-button');
 const colorBtn = document.querySelector('.colors-button');
 const blackBtn = document.querySelector('.black-button');
 
+
 let divToPaint = document.querySelectorAll('.untagged');
 
 let gridSize = 16;
@@ -71,9 +72,16 @@ function whichColor() {
 
     divToPaint.forEach((divToPaint) => {
         if (colorGrid == true) {
-            divToPaint.addEventListener('mouseover', (divToPaint) => divToPaint.target.style.backgroundColor = randomColor());
+            divToPaint.addEventListener('mouseenter', (divToPaint) => divToPaint.target.style.backgroundColor = randomColor());
         } else if (colorGrid == false) {
-            divToPaint.addEventListener('mouseover', (divToPaint) => divToPaint.target.style.backgroundColor = 'black');
+            divToPaint.addEventListener('mouseenter', (divToPaint) => divToPaint.target.style.backgroundColor = darkenBlack());
         };
     });
+};
+
+function darkenBlack() {
+    let values = 250;
+    let color = `rgb(${values}, ${values}, ${values})`;
+    values -= 25;
+    return color;
 };
