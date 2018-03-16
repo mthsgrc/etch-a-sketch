@@ -43,10 +43,30 @@ table {
 	border-spacing: 0;
 }
 
-.outer-container {
-	width: auto;
-	height: 90%;
-	border: 1px solid black;
-	margin: 5% auto;
+body {
+	height: 100% auto;
+	width: 100%;
 }
 
+.outer-container {
+	display: grid;
+	width: auto;
+	height: 75%;
+	border: 1px solid black;
+	padding-bottom: 2%;
+	margin-bottom: 2%;
+	background-color: #B2B2B2;
+	justify-content: space-around;
+}
+
+h2 {
+	text-align: center;
+	font-weight: bolder;
+	font-family: fantasy;
+	font-size: 25px;
+}
+
+footer {
+	font-family: monospace;
+	text-align: center;
+}

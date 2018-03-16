@@ -11,8 +11,9 @@ let colorGrid = false;
 
 container.style.width = '500px';
 container.style.height = '500px';
-container.style.margin = '5% auto';
+container.style.margin = '0 auto';
 container.style.border = '2px solid #6E6E6E';
+container.style.boxShadow = '5px 5px 5px black';
 
 container.style.display = 'grid';
 container.style.justifyContent = 'stretch';
@@ -40,7 +41,7 @@ function createGrid(newGridSize) {
     for (i = 1; i <= gridSize; i++) {
         for (j = 1; j <= gridSize; j++) {
             let squares = document.createElement('div');
-            squares.style.backgroundColor = '#EEEEEE';
+            squares.style.backgroundColor = '#FFF';
             squares.style.gridRow = `${i}`;
             squares.style.gridColumn = `${j}`;
             container.appendChild(squares);
@@ -53,7 +54,7 @@ function createGrid(newGridSize) {
 };
 
 function userGridSize() {
-    let userGridSize = +prompt('New Grid Size', '16 - 128');
+    let userGridSize = +prompt('New Grid Size', '16 - 100');
     createGrid(userGridSize);
 };
 
@@ -63,7 +64,7 @@ function randomColor() {
     let newColor = '#';
     for (i = 0; i <= 5; i++) {
         newColor += colorsValues[Math.floor(Math.random() * colorsValues.length)];
-    }
+    };
     return newColor;
 };
 
@@ -74,7 +75,7 @@ function whichColor() {
         if (colorGrid == true) {
             divToPaint.addEventListener('mouseenter', (divToPaint) => divToPaint.target.style.backgroundColor = randomColor());
         } else if (colorGrid == false) {
-            divToPaint.addEventListener('mouseenter', (divToPaint) => divToPaint.target.style.backgroundColor = darkenBlack());
+            divToPaint.addEventListener('mouseenter', (divToPaint) => divToPaint.target.style.backgroundColor = 'black');
         };
     });
 };
